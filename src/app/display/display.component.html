@@ -1,0 +1,41 @@
+<h1>Events Display</h1>
+<div class="list-layout">
+  <mat-expansion-panel *ngFor="let eventStat of eventStats">
+    <mat-expansion-panel-header>
+      #{{eventStat._event.id}}
+       - {{eventStat._event.eventInfo}}
+       - {{eventStat._event.eventLocation}}
+       - {{eventStat._event.timeOfEvent}}
+    </mat-expansion-panel-header>
+
+    <mat-list>
+      <mat-list-item >
+        hasBarcode: {{eventStat._event.hasBarcode}}
+        <mat-divider></mat-divider>
+      </mat-list-item>
+      <mat-list-item >
+        Number of tickets: {{eventStat._numberOfTickets}}
+        <mat-divider></mat-divider>
+      </mat-list-item>
+      <mat-list-item>
+        Percentage sold: {{eventStat._percentageSold | number:'1.0-2'}}%
+        <mat-divider></mat-divider>
+      </mat-list-item>
+      <mat-list-item>
+        Percentage validated: {{eventStat._percentageValidated | number:'1.0-2'}}%
+        <mat-divider></mat-divider>
+      </mat-list-item>
+      <mat-list-item>
+        Percentage cancelled: {{eventStat._percentageCancelled | number:'1.0-2'}}%
+        <mat-divider></mat-divider>
+      </mat-list-item>
+    </mat-list>
+
+  </mat-expansion-panel>
+
+  <div class="containerEmpty" *ngIf="eventStats.length <=0" fxLayout="row" fxLayoutAlign="center center">
+    <p class="timeUnitsEmpty">
+      No records added yet!
+    </p>
+  </div>
+</div>

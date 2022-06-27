@@ -1,0 +1,18 @@
+<h1>Validate Ticket</h1>
+<div class="form-layout">
+  <form
+    fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px"
+    (ngSubmit)="validateTicket(validateForm)"
+    #validateForm="ngForm">
+
+    <mat-form-field>
+      <mat-label>Ticket ID.</mat-label>
+      <input matInput name="ticketId" type="number" ngModel required>
+    </mat-form-field>
+    <button color="accent"
+            mat-raised-button
+            type="submit"
+            [disabled]="validateForm.invalid">
+      Validate Ticket!</button>
+  </form>
+</div>

@@ -1,0 +1,22 @@
+<h1>Load Ticket</h1>
+
+<div class="form-layout">
+  <form
+    fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px"
+    (ngSubmit)="onLoad(loadTicketForm)"
+    #loadTicketForm="ngForm">
+    <mat-form-field>
+      <input matInput name="ticketInformation" ngModel type="text" placeholder="Ticket Information" #ticketInformationInput="ngModel" required>
+      <mat-error *ngIf="ticketInformationInput.invalid">Please enter ticket information.</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput name="validationCode" ngModel type="text" placeholder="Validation Code" #validationCodeInput="ngModel" required>
+      <mat-error *ngIf="validationCodeInput.invalid">Please enter a validation code.</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput name="eventReference" ngModel type="number" placeholder="Event Reference" #eventReferenceInput="ngModel" required>
+      <mat-error *ngIf="eventReferenceInput.invalid">Please enter an event reference code.</mat-error>
+    </mat-form-field>
+    <button mat-raised-button color="accent" type="submit" [disabled]="loadTicketForm.invalid">Submit</button>
+  </form>
+</div>
