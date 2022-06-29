@@ -2,7 +2,7 @@ import {HttpClient} from "@angular/common/http";
 import {Networking} from "../Networking";
 import {Injectable} from "@angular/core";
 
-type LoadTicketParams = { ticketInformations: string, validationCode: string, eventReference: number };
+type LoadTicketParams = { ticketInformation: string, validationCode: string, eventReference: number };
 
 @Injectable({
   providedIn: 'root'

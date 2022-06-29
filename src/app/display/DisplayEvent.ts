@@ -2,11 +2,11 @@ import {EventStats} from "./EventStats";
 
 export class DisplayEvent {
 
-  constructor(evemtStats: EventStats[]) {
-    this._eventStats = evemtStats;
+  constructor(eventStats: EventStats[]) {
+    this._eventStats = eventStats;
   }
 
-  private _eventStats: EventStats[];
+  private readonly _eventStats: EventStats[];
 
   get eventStats(): EventStats[] {
     return this._eventStats;
